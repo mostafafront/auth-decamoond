@@ -1,0 +1,25 @@
+// media query mixin
+@mixin device($breakpoint) {
+  @if $breakpoint == small {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $breakpoint == medium {
+    @media (min-width: 600px) and (max-width: 900px) {
+      @content;
+    }
+  } @else if $breakpoint == large {
+    @media (min-width: 900px) and (max-width: 1200px) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$breakpoint}";
+  }
+}
+
+
+@mixin flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

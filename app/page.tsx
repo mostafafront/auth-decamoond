@@ -5,7 +5,20 @@ export default function Auth() {
   return (
     <main>
       <div className={styles.mainSectoin}>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore pariatur modi placeat cumque optio ipsa ex praesentium, quas consequatur eligendi ea et maiores eum consequuntur quaerat ipsam corrupti! Saepe, excepturi?
+        <form>
+          <div>
+            <label htmlFor="inputPhone">INTER YOUR PHONE NUMBER</label>
+          </div>
+          <div>
+            <input
+              id="inputPhone"
+              type="string"
+              placeholder="eg: 09125451232"
+              title="iranian number"
+            />
+            <button type="submit">LOGIN</button>
+          </div>
+        </form>
       </div>
     </main>
   );

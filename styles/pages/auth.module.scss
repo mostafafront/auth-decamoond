@@ -1,5 +1,68 @@
+@use "../abstracts/mixins";
+@import "../abstracts/variables";
+
 .mainSectoin{
+    @include mixins.flex-center;
     height: 100vh;
     width: 100%;
     background: url('/images/moonBg.jpg') center / cover no-repeat;
+    
+    form{
+        @include mixins.flex-center;
+        flex-direction: column;
+        background-color: $bg-form;
+        backdrop-filter: blur(18px);
+        padding: 4rem 2rem;
+        border-radius: 12px;
+        gap: 3rem;
+        font-size: 1.6rem;
+
+        @include mixins.device(small) {
+            font-size: 1.2rem;
+            padding: 2rem 1rem;
+        }
+
+        @include mixins.device(medium) {
+            font-size: 1.4rem;
+            padding: 3rem 2rem;
+        }
+        
+        label{
+            font-weight: bold;
+            color: $txt-color-form;
+        }
+
+        div{
+            width: 100%;
+            @include mixins.flex-center;
+            flex-direction: column;
+            gap: 1rem;
+
+            input{
+                width: 100%;
+                background-color: #00000040;
+                backdrop-filter: blur(12px);
+                color: $txt-color-form;
+                padding: 10px;
+                font-size: .7em;
+                border: none !important;
+                outline: none;
+                border-radius: 8px;
+                
+                &::placeholder{
+                    color: $placeholder-color-form;
+                }
+            }
+            
+            button{
+                width: 100%;
+                padding: .5rem 1rem;
+                border: none;
+                border-radius: 8px;
+                background-color: $txt-color-form;
+                font-size: .7em;
+                cursor: pointer;
+            }
+        }
+    }
 }
